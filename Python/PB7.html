@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Strings</title>
+    </head>
+    <body>
+        <p id="ori"></p>
+        <form>
+            <fieldset>
+                <legend>Input</legend>
+                Enter the string that is to be added to the start of the array:
+                <input type="text" name="" id="newstr">
+                <br>
+                <input type="button" onclick="func()" value="Submit">
+            </fieldset>
+        </form>
+        <p id="newstring"></p>
+        <p id="xx"></p>
+        <p id="xy"></p>
+        <script>
+            or_string=['this','is','a','list','of','words'];
+            mylen=[];
+            len=[];
+            document.getElementById("ori").innerHTML="The original string array is: "+or_string;
+            function func()
+            {
+                x=document.getElementById("newstr").value;
+                or_string.unshift(x);
+                document.getElementById("newstring").innerHTML = "The modified array is: " + or_string;
+                func2(or_string);
+            }
+
+            function func2(or_string)
+            {
+                for(i=0;i<or_string.length;i++)
+                {
+                    mylen[i]=or_string[i].length;
+                }
+                 document.getElementById("xx").innerHTML = "The length array is: " + mylen;
+                 func3(or_string,mylen);
+            }
+            function func3(or_string,mylen) 
+            {
+                    for (i = 0; i<mylen.length; i++) {
+                        if(mylen[i]<=3)
+                        {
+                            len.push(or_string[i]);
+                        }
+                    }
+                    document.getElementById("xy").innerHTML = "The strings with length less than or equal to 3 is: " + len;
+             }
+        </script>
+    </body>
+</html>

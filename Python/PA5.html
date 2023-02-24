@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    enter a string<input type="text" name="" id="str">
+    <button id="res" onclick="func()">perform</button>
+    <p id="r1"></p>
+    <p id="=r2"></p>
+    <p id="r3"></p>
+
+    <script>
+        function func()
+        {
+        x=document.getElementById("str").value;
+        var res="";
+
+        for(i=0;i<x.length;i++)
+        {
+            z=x.charCodeAt(i);
+            if(z==122)
+            {
+                z=65;
+            }
+            else if(z==90)
+            {
+                z=97;
+            }
+            else{
+                z=z+1;
+            }
+            temp=String.fromCharCode(z);
+            if(temp=='a' || temp == 'e'||temp == 'i'|| temp == 'o'||temp == 'u')
+            {
+                temp=temp.toUpperCase();
+            }
+            res=res+temp;
+        }
+        document.getElementById("r1").innerHTML=res
+    }
+    </script>
+</body>
+</html>

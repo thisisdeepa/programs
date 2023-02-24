@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>input</legend>
+        <label for="text">Enter the string</label>
+        <input type="textbox" id="str1"><br><br>
+        <input type="button" onclick="myfunc()" value="perform">
+        <br>
+        The final modified string is
+        <p id="out"></p>
+    </fieldset>
+
+    <script>
+        function myfunc() {
+            x = document.getElementById("str1").value;
+            // y=x.split("")
+            // document.getElementById("out").innerHTML=y;
+
+            var result = ""
+            for (i = 0; i < x.length; i++) {
+                z = x.charCodeAt(i);
+                if (z == 122) {
+                    z = 64;
+                }
+                else if (z == 90) {
+                    z = 96;
+                }
+                temp = String.fromCharCode(z + 1);
+                if (temp == "a" || temp == "e" || temp == "i" || temp == "o" || temp == "u") {
+                    temp = temp.toUpperCase();
+                }
+                result = result + temp;
+            }
+            document.getElementById("out").innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>

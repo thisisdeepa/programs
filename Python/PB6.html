@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="t1">Enter the text</label><br>
+        <input type="textbox" id="t1" size="100"><br><br>
+        <label for="t2">Enter the search string</label><br>
+        <input type="textbox" id="t2" size="50"><br><br>
+        <input type="button" onclick="myfunc()" value="Perform">
+    </form>
+    The entered text is
+    <p id="a1"></p>
+    The number of white spaces are
+    <p id="a21"></p>
+    The number of alphabets are
+    <p id="a22"></p>
+    The number of digits are
+    <p id="a23"></p>
+
+    The number of occurences of the given string in the text is
+    <p id="a3"></p>
+    The first occurence index of the string in the text is
+    <p id="a4"></p>
+
+
+
+
+
+
+    <script>
+        function myfunc() {
+            x = document.getElementById("t1").value;
+            document.getElementById("a1").innerHTML = x;
+
+            alph = 0;
+            num = 0;
+            for (i = 0; i < x.length; i++) {
+                if ((x[i] >= "A") && (x[i] <= "z")) {
+                    alph++;
+                }
+                else if (x[i] >= "0" && x[i] <= "9") {
+                    num++;
+                }
+            }
+
+            y = document.getElementById("t2").value;
+            let a = x.split(" ")
+            document.getElementById("a21").innerHTML = a.length - 1;
+            document.getElementById("a22").innerHTML = alph;
+            document.getElementById("a23").innerHTML = num;
+            let count = 0;
+            for (i = 0; i < a.length; i++) {
+                if (y == a[i]) {
+                    count++;
+                }
+            }
+            document.getElementById("a3").innerHTML = count;
+            document.getElementById("a4").innerHTML = (x.indexOf(y)) + 1;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!-- JavaScript - Client Side Validation: Design a case study for a Bakery that creates and
+validates a HTML form at the client side using Javascript. Bakery Menu & Price calculation
+of items bought should be the result. Perform the necessary Client Side validation using
+JavaScript. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery</title>
+</head>
+
+<body>
+    <h3>Bake-Wake</h3>
+    <fieldset>
+        <legend>Menu</legend>
+        <table>
+            <tr>
+                <th>Item Name</th>
+                <th>Price for Each</th>
+                <th>         </th>
+                <th>Number of each item</th>
+            </tr>
+            <tr>
+                <td>Cake</td>
+                <td>350</td>
+                <td><input type="button" onclick="bake1()" value="ADD"></td>
+                <td id="t1"></td>
+            </tr>
+            <tr>
+                <td>Bread</td>
+                <td>50</td>
+                <td><input type="button" onclick="bake2()" value="ADD"></td>
+                <td id="t2"></td>
+            </tr>
+            <tr>
+                <td>Biscuits</td>
+                <td>100</td>
+                <td><input type="button" onclick="bake3()" value="ADD"></td>
+                <td id="t3"></td>
+            </tr>
+            <tr>
+                <td>Sandwich</td>
+                <td>80</td>
+                <td><input type="button" onclick="bake4()" value="ADD"></td>
+                <td id="t4"></td>
+            </tr>
+        </table>
+        <br>
+        The Total Price is: <p id="R1"></p>
+    </fieldset>
+    <button onclick="func()">Submit</button>
+
+
+    <script>
+        let price = 0;
+        let tt1=0, tt2=0, tt3=0, tt4=0;
+        function bake1() {
+            tt1++;
+            price = price + 350;
+            document.getElementById("R1").innerHTML = price;
+            document.getElementById("t1").innerHTML=tt1;
+        }
+        function bake2() {
+            tt2++;
+            price = price + 50;
+            document.getElementById("R1").innerHTML = price;
+            document.getElementById("t2").innerHTML = tt2;
+        }
+        function bake3() {
+            tt3++;
+            price = price + 100;
+            document.getElementById("R1").innerHTML = price;
+            document.getElementById("t3").innerHTML = tt3;
+        }
+        function bake4() {
+            tt4++;
+            price = price + 80;
+            document.getElementById("R1").innerHTML = price;
+            document.getElementById("t4").innerHTML = tt4;
+        }
+        function func()
+        {
+            alert("THANK YOU!");
+        }
+
+    </script>
+</body>
+
+</html>

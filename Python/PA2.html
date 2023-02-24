@@ -1,0 +1,47 @@
+<!-- HTML and Javascript: Create a front end that allows the user to enter details of the item
+purchased (item name, item price (option), number of items bought). On clicking of the submit
+button, the total cost for the item purchased should be calculated and displayed. On clicking
+on the ‘paid’ button, appropriate alert box should be popped up. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item_purchased</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Enter details of the item purchased</legend>
+        <form action=""></form>
+        <label for="name">Item name: </label>
+        <input type="text box" id="name" >
+        <br><br>
+        <label for="price">Item price: </label>
+        <input type="number" name="" id="price" min="1">
+        <br><br>
+        <label for="num">Number of items: </label>
+        <input type="number" name="" id="num" min="1">
+        <br><br>
+        <input type="button" value="Submit" onclick="myfunc()">
+        </form>
+        <br><br>
+        The total cost is : <p id="total"></p>
+    </fieldset>
+    <br>
+        <button onclick="end()">Paid</button>
+    <script>
+        function myfunc()
+        {
+            x=document.getElementById("price").value;
+            y= document.getElementById("num").value;
+            document.getElementById("total").innerHTML=x*y;
+        }
+        function end()
+        {
+            alert("Thank you for purchasing. Do visit again!!");
+        }
+    </script>
+</body>
+</html>
